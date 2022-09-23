@@ -15,20 +15,20 @@
 			
 				<tr height="50">
 					<td width="150" align="center">아이디</td>
-					<td width="350" align="center"><input type="text" name="id"
-						size="40"></td>
+					<td width="350" align="center"><input type="text" name="id"	size="40" placeholder="id를 입력하세요.">
+					</td>
 				</tr>
 				
 				<tr height="50">
 					<td width="150" align="center">패스워드</td>
 					<td width="350" align="center"><input type="password"
-						name="pass1" size="40"></td>
+						name="pass1" size="40" placeholder="영문과 숫자 특수 문자를 입력하세요."></td>
 				</tr>
 				
 				<tr height="50">
 					<td width="150" align="center">패스워드 확인</td>
 					<td width="350" align="center"><input type="password"
-						name="pass2" size="40"></td>
+						name="pass2" size="40" placeholder="영문과 숫자 특수 문자를 입력하세요."></td>
 				</tr>
 				
 				<tr height="50">
@@ -43,16 +43,18 @@
 						size="40"></td>
 				</tr>
 				
+				<!-- check box -->
 				<tr height="50">
 					<td width="150" align="center">당신의 관심분야</td>
-					<td width="150" align="center"><input type="checkbox"
-						name="hobby" value="캠핑">캠핑 &nbsp;&nbsp; 
+					<td width="150" align="center">
+						<input type="checkbox"	name="hobby" value="캠핑">캠핑 &nbsp;&nbsp; 
 						<input	type="checkbox" name="hobby" value="등산">등산 &nbsp;&nbsp; 
 						<input	type="checkbox" name="hobby" value="낚시">낚시 &nbsp;&nbsp; 
 						<input	type="checkbox" name="hobby" value="영화">영화 &nbsp;&nbsp;
 					</td>
 				</tr>
 				
+				<!--선택 목록 -->
 				<tr height="50">
 					<td width="150" align="center">당신의 직업은</td>
 					<td width="350" align="center">
@@ -64,7 +66,8 @@
 					</select>
 					</td>
 				</tr>
-
+				
+				<!-- raido 버튼 -->
 				<tr height="50">
 					<td width="150" align="center">당신의 연령은</td>
 					<td width="350" align="center">
@@ -89,8 +92,6 @@
 					<input type="reset" value="취소">
 					</td>
 				</tr>
-				
-
 			</table>
 		</form>
 	</div>
