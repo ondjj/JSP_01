@@ -11,10 +11,8 @@
 	<div align="center">
 		<h2>로그인 페이지</h2>
 
-		<form action="RequestLoginProc.jsp" method="get">
-
+		<form action="RequestLoginProc.jsp" method="post">
 			<table style="width:400" border="1">
-
 				<tr height="60">
 					<td align="center" width="150">아이디</td>
 					<td align="left" width="250"><input type="text" name="id">
@@ -30,8 +28,6 @@
 					</td>
 				</tr>
 			</table>
-
-
 		</form>
 	</div>
 
