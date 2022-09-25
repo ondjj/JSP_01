@@ -34,8 +34,6 @@
 	 		<jsp:include page="Bottom.jsp"/>
 	 	</td>
 	</tr>
-		  
-	
 	</table>
 </div>
 
