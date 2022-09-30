@@ -1,3 +1,7 @@
+<%@page import="model.MemberDAO"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -31,7 +35,14 @@
 // 기존 취미는 주소 번지가 저장 되기 때문에 위에 배열의 내용을 하나의 스트링으로 저장한 변수를
 // 다시 입력 해준다.
 	mbean.setHobby(textHobby);
+	
+	//데이터 베이스 클래스 객체 생성
+	MemberDAO mdao = new MemberDAO();
+	mdao.insertMember(mbean);
 %>
+
+	오라클 완료 ~ 
+	
 
 </body>
 </html>
