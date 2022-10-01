@@ -1,9 +1,12 @@
 <%@page import="model.MemberDAO"%>
-<%@page import="model.MemberBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
 <body>
 
 	<%
@@ -23,8 +26,8 @@
 		// 수정하기위해서 작성한 패스워드값과 기존 데이터 베이스에서 가져온 패스워드 값을 비교
 		if(mbean.getPass1().equals(pass)){
 			
-			//MemberDAO 클래스의 회원 수정 메소드를 호출
-			mdao.updateMember(mbean);
+			//MemberDAO 클래스의 회원 삭제 메소드를 호출
+			mdao.deleteMember(mbean.getId());
 			
 			response.sendRedirect("MemberList.jsp");
 			

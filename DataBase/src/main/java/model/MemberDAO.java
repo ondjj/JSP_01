@@ -111,7 +111,7 @@ public class MemberDAO {
 			// 커넥션 연결 
 			getCon();
 			// 쿼리 준비
-			String sql = "select * from member where id=?";
+			String sql ="select * from member where id=?";
 			pstmt = con.prepareStatement(sql);
 			// ? 의 값을 맵핑
 			pstmt.setString(1, id);
@@ -160,6 +160,49 @@ public class MemberDAO {
 			e.printStackTrace();
 		}
 		return pass;
+	}
+	
+	// 한 회원의 정보를 수정하는 메소드 
+	public void updateMember(MemberBean bean) {
+		
+		getCon();
+		try {
+			// 쿼리 준비 
+			String sql ="update member set email=?,tel=? where id=?";
+			
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, bean.getEmail());
+			pstmt.setString(2, bean.getTel());
+			pstmt.setString(3, bean.getId());
+			// 쿼리 실행 
+			pstmt.executeUpdate();
+			
+			con.close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	// 한 회원을 삭제하는 메소드 작성
+	public void deleteMember(String id) {
+		
+		getCon();
+		try {
+			
+			String sql = "delete from member where id= ?";
+			
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, id);
+			
+			pstmt.executeUpdate();
+			
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }
