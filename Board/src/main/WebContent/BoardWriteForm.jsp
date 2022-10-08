@@ -3,7 +3,9 @@
 <!DOCTYPE html>
 <html>
 <body>
+
 <div align="center">
+
 <h2>게시글 쓰기</h2>
 
 <form action="BoardWriteProc.jsp" method="post">
@@ -36,7 +38,6 @@
 			</td>
 		</tr>
 	</table>
-
 </form>
 
 </div>
