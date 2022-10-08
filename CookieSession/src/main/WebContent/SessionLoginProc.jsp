@@ -8,8 +8,6 @@
 </head>
 <body>
 
-<div align="center">
-	<h2>세션 로그인 처리 1</h2>
 <% 
 	request.setCharacterEncoding("utf-8");
 
@@ -22,13 +20,9 @@
 	session.setAttribute("pass", pass);
 	
 	// 세션 유지 시간 설정
-	session.setMaxInactiveInterval(60);
+	session.setMaxInactiveInterval(60 * 2);
+	
+	response.sendRedirect("SessionMain.jsp");
 %>
-
-<h2>당신의 아이디는 <%= id %> 입니다. 패스워드는 <%= pass %> 입니다. </h2>
-<a href="SessionLoginProc2.jsp">다음 페이지로 이동 </a>
-
-
-</div>
 </body>
 </html>
