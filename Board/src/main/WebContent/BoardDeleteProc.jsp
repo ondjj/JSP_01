@@ -15,7 +15,7 @@
 		
 		// 기존 패스워드 값과 delete 폼에서 받은 패스워드 값 비교
 		if(pass.equals(password)){
-			bdao.deleteBoard(num);
+			bdao.deleteBoard(num); 
 			
 			response.sendRedirect("BoardList.jsp");
 		}else{

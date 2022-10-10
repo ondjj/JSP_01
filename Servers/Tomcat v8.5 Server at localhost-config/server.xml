@@ -163,10 +163,13 @@
       <Context docBase="CookieSession" path="/CookieSession" reloadable="true" source="org.eclipse.jst.jee.server:CookieSession"/>
       
       <Context docBase="Board" path="/Board" reloadable="true" source="org.eclipse.jst.jee.server:Board">
-      	<Resource DriverClassName="oracle.jdbc.driver.OracleDriver" auth="Container" loginTimeout="10" maxWait="5000" name="jdbc/pool" 
-      				password="1234" type="javax.sql.DataSource" url="jdbc:oracle:thin:@Localhost:1521:XE" username="ONDD"/>
+      	<Resource DriverClassName="oracle.jdbc.driver.OracleDriver" auth="Container" loginTimeout="10" maxWait="5000" name="jdbc/pool" password="1234" type="javax.sql.DataSource" url="jdbc:oracle:thin:@Localhost:1521:XE" username="ONDD"/>
       </Context>
       
+      <Context docBase="RentCar" path="/RentCar" reloadable="true" source="org.eclipse.jst.jee.server:RentCar">
+      	<Resource DriverClassName="oracle.jdbc.driver.OracleDriver" auth="Container" loginTimeout="10" maxWait="5000" name="jdbc/pool" password="1234" type="javax.sql.DataSource" url="jdbc:oracle:thin:@Localhost:1521:XE" username="ONDD"/>
+      </Context>
+     
       </Host>
     </Engine>
   </Service>
