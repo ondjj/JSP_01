@@ -74,15 +74,18 @@ public class BoardDAO {
 	}
 
 	// 모든 게시글을 리턴해주는 메소드 작성
-	public ArrayList<BoardBean> getAllBoard() {
+	public ArrayList<BoardBean> getAllBoard(int start, int end) {
 		// 리턴할 객체 선언
 		ArrayList<BoardBean> arr = new ArrayList<>();
 		getCon();
 		try {
 			// 쿼리 준비
-			String sql = "select * from board order by ref desc, re_step asc";
+			String sql = "select * from (select A.* ,Rownum Rnum from (select * from board order by ref desc, re_step asc)A) "
+							+ "where Rnum >= ? and Rnum <= ?";
 			// 쿼리 실행 객체 선언
 			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
 			// 쿼리 실행 후 결과 저장
 			rs = pstmt.executeQuery();
 			// 데이터 개 수를 모르기 때문에 반복문을 사용하여 데이터를 추출
@@ -308,5 +311,30 @@ public class BoardDAO {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
+	}
+	
+	// 전체 글의 개 수를 리턴하는 메소드 
+	public int getAllCount() {
+		getCon();
+		// 게시글의 전체 수를 저장하는 변수 
+		int count = 0;
+		
+		try {
+			// 쿼리 준비
+			String sql = "select count(*) from board";
+			// 쿼리 객체 선언
+			pstmt = con.prepareStatement(sql);
+			// 쿼리 실행
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				count = rs.getInt(1); // 전체 게시글 수 리턴 
+			}
+			
+			con.close();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return count;
 	}
 }
