@@ -62,12 +62,11 @@ public class RentCarDAO {
 				
 				count++;
 				
-				if(count > 3) {
+				if(count > 2) {
 					break;
 				}
-				con.close();
 			}
-			
+			con.close();
 			
 		} catch (Exception e) {
 			// TODO: handle exception
