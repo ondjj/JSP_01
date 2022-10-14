@@ -8,13 +8,5 @@
 </head>
 <body>
 
-<table style="width:1000">
-	<tr height="470">
-		<td align="center">
-			<img alt="" src="img/Main.jpg" width="1000" height="470">
-		</td>
-	</tr>
-</table>
-
 </body>
 </html>

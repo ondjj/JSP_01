@@ -13,7 +13,7 @@
 	}
 %>
 
-	<table style="width:1000" bordercolor="white">
+	<table style="width:1000">
 		<tr height="70">
 			<td colspan="4">
 				<img alt="" src="img/RENT.png" height="65">
@@ -25,7 +25,7 @@
 		
 		<tr height="50">
 			<td align="center" width="200" bgcolor="pink">
-				<font color="white" size="4"><a href="#" style="text-decoration:none">예약하기</a></font>
+				<font color="white" size="4"><a href="CarReserveMain.jsp" style="text-decoration:none">예약하기</a></font>
 			</td>
 				<td align="center" width="200" bgcolor="pink">
 				<font color="white" size="4"><a href="#" style="text-decoration:none">예약확인</a></font>
