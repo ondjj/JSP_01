@@ -15,6 +15,11 @@
 %>
 
 <table style="width:1000">
+	<tr height="100">
+		<td align="center" colspan="3">
+			<font size="6" color="gray">최신형 자동차</font>
+		</td>
+	</tr>
 	
 	<tr height="240">
 	<% for(int i=0; i < arr.size(); i++){
@@ -27,7 +32,6 @@
 		차량명 : <%= bean.getName() %>
 		</p>
 		</td>
-		
 	<%
 		}
 	%>
@@ -36,15 +40,16 @@
 
 <p>
 	<font size="4" color="gray">차량 검색 하기 </font><br><br><br>
-	<form action="CarCategoryList.jsp" method="post">
+	<form action="RentCarMain.jsp?Center=CarCategoryList.jsp" method="post">
+	<font size="3" color="gray"><b>차량 검색 하기</b></font> &nbsp; &nbsp;
 			<select name="category">
 				<option value="1">소형</option>
 				<option value="2">중형</option>
 				<option value="3">대형</option>
 			</select> &nbsp; &nbsp;
 			<input type="submit" value="검색"> &nbsp; &nbsp;
-			<button onclick="location.href='CarAllList.jsp'">전체 검색 </button>
 	</form>
+		<button onclick="location.href='RentCarMain.jsp?Center=CarAllList.jsp'">전체 검색 </button>
 </div>
 </body>
 </html>

@@ -16,7 +16,9 @@
 	<table style="width:1000">
 		<tr height="70">
 			<td colspan="4">
+				<a href="RentCarMain.jsp" style="text-decoration:none">
 				<img alt="" src="img/RENT.png" height="65">
+				</a>
 			</td>
 			<td align="center" width="200">
 				<%= id %> 님 반갑습니다.
