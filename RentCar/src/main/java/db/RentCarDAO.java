@@ -76,9 +76,7 @@ public class RentCarDAO {
 	}
 
 	public ArrayList<CarListBean> getCategoryCar(int category) {
-    	//���� Ÿ���� ���� 
 		ArrayList<CarListBean> arr = new ArrayList<>();
-		//�����͸� ������ �� Ŭ���� ���� 
 		CarListBean bean = null;
 		
 		getCon();
@@ -89,12 +87,9 @@ public class RentCarDAO {
     		//?
     		pstmt.setInt(1,category);
     		
-    		// ����� ����
     		rs = pstmt.executeQuery();
     		
-    		//�ݺ����� ���鼭 �����͸� ����
     		while(rs.next()){
-    			//�����͸� ������ ��Ŭ���� ����
     			bean = new CarListBean();
     			bean.setNo(rs.getInt(1));
     			bean.setName(rs.getString(2));
@@ -119,18 +114,15 @@ public class RentCarDAO {
     	ArrayList<CarListBean> arr = new ArrayList<>();
 		CarListBean bean = null;
 		
-		getCon();//Ŀ�ؼ��� ����Ǿ�� ������ ���డ�� 
+		getCon();//
 		
     	try {
     		String sql = "select * from rentcar";
     		pstmt = con.prepareStatement(sql);
     		
-    		// ����� ����
     		rs = pstmt.executeQuery();
     		
-    		//�ݺ����� ���鼭 �����͸� ����
     		while(rs.next()){
-    			//�����͸� ������ ��Ŭ���� ����
     			bean = new CarListBean();
     			bean.setNo(rs.getInt(1));
     			bean.setName(rs.getString(2));
@@ -140,7 +132,6 @@ public class RentCarDAO {
     			bean.setCompany(rs.getString(6));
     			bean.setImg(rs.getString(7));
     			bean.setInfo(rs.getString(8));
-    			//���Ϳ� �� Ŭ������ ����
     			arr.add(bean);
     		}
     		con.close();

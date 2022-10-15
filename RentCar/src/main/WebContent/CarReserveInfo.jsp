@@ -35,7 +35,7 @@
 
 <div align="center">
 
-<form action="RentCarMain.jsp?Center=CarOptionSelect.jsp">
+<form action="RentCarMain.jsp?Center=CarOptionSelect.jsp" method="post">
 <table style="width:1000">
 
 	<tr height="100">
@@ -46,7 +46,7 @@
 	
 	<tr>
 		<td rowspan="6" width="500" align="center">
-			<img alt="" src="img/<%=bean.getImg()%>" width="450">
+			<img alt="" src="img/<%=bean.getImg()%>" width="450">	
 		</td>
 		<td width="250" align="center"> 차량이름 </td>
 		<td width="250" align="center"> <%= bean.getName() %> </td>
@@ -74,6 +74,7 @@
 	<tr>
 		<td align="center" colspan="2"> 
 			<input type="hidden" name="no" value="<%=bean.getNo() %>">
+			<input type="hidden" name="img" value="<%=bean.getImg()%>">
 			<input type="submit" value="옵션 선택 후 구매하기">
 		</td>
 	</tr>
