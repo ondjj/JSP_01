@@ -82,7 +82,10 @@
 		</td>
 	</tr>
 	<tr>
-		<td align="center" colspan="2"> <input type="submit" value="차량 예약"> </td>
+		<td align="center" colspan="2"> 
+		<input type="hidden" name="no" value="<%=no %>">
+		<input type="hidden" name="qty" value="<%=qty %>">
+		<input type="submit" value="차량 예약"> </td>
 	</tr>
 		
 	

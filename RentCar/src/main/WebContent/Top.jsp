@@ -21,7 +21,14 @@
 				</a>
 			</td>
 			<td align="center" width="200">
-				<%= id %> 님 반갑습니다.
+				<%= id %> 님
+			<%
+				if(id.equals("GUEST")){
+			%>
+				<button onclick="RentCarMain.jsp?Center=MemberLogin.jsp">로그인</button>
+			<%
+				}
+			%>
 			</td>
 		</tr>
 		
