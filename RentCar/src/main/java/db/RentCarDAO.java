@@ -203,6 +203,101 @@ public class RentCarDAO {
 			e.printStackTrace();
 		}
     	return result;
+    }
+    
+    // 하나의 예약 정보를 저장하는 메소드
+    public void setReserveCar(CarReserveBean bean) {
+    	
+    	getCon();
+    	
+    	try {
+    		
+    		String sql = "insert into carreserve values(reserve_seq.NEXTVAL, ?, ?, ?, ?, ?, ?, ? ,? ,?)";
+			pstmt = con.prepareStatement(sql);
+			
+			// ?
+			pstmt.setInt(1, bean.getNo());
+			pstmt.setString(2, bean.getId());
+			pstmt.setInt(3, bean.getQty());
+			pstmt.setInt(4, bean.getDday());
+			pstmt.setString(5, bean.getRday());
+			pstmt.setInt(6, bean.getUsein());
+			pstmt.setInt(7, bean.getUsewifi());
+			pstmt.setInt(8, bean.getUseseat());
+			pstmt.setInt(9, bean.getUsenavi());
+			
+			pstmt.executeUpdate();
+			
+			con.close();
+
+    		
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+    }
+    
+    // 회원의 예약 정보를 리턴하는 메소드 작성 
+    public ArrayList<CarViewBean> getAllReserve(String id){
+    	ArrayList<CarViewBean> arr = new ArrayList<>();
+    	
+    	CarViewBean bean = null;
+    	
+    	getCon();
+    	
+    	try {
+    		String sql = "SELECT * FROM RENTCAR NATURAL JOIN CARRESERVE "
+    				+ "WHERE SYSDATE < TO_DATE(rday, 'YYYY-MM-DD') AND id=?";
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, id);
+			
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				bean = new CarViewBean();
+				bean.setName(rs.getString(2));
+				bean.setPrice(rs.getInt(4));
+				bean.setImg(rs.getString(7));
+				bean.setQty(rs.getInt(11));
+				bean.setDday(rs.getInt(12));
+				bean.setRday(rs.getString(13));
+				bean.setUsein(rs.getInt(14));
+				bean.setUsewifi(rs.getInt(15));
+				bean.setUseseat(rs.getInt(16));
+				bean.setUsenavi(rs.getInt(17));
+			}
+			
+			arr.add(bean);
+			
+			con.close();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+    	
+    	return arr;
+    }
+    
+    // 하나의 예약 삭제
+    public void carRemoveReserve(String id, String rday) {
+    	getCon();
+    	
+    	try {
+    		String sql ="delete from carreserve where id=? and rday=?";
+    		pstmt = con.prepareStatement(sql);
+    		
+    		//?
+    		pstmt.setString(1, id);
+    		pstmt.setString(2, rday);
+    		
+    		// 쿼리 실행
+    		pstmt.executeUpdate();
+    		
+    		con.close();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
     	
     }
     
