@@ -22,9 +22,10 @@
 %>
 	<script>
 		alert("로그인 후 예약이 가능 합니다.");
+		location.href='RentCarMain.jsp?Center=MemberLogin.jsp';
+
 	</script>
 <%
-	response.sendRedirect("RentCarMain.jsp?Center=MemberLogin.jsp");
 	}
 %>
 </body>

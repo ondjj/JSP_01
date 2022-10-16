@@ -25,7 +25,11 @@
 			<%
 				if(id.equals("GUEST")){
 			%>
-				<button onclick="RentCarMain.jsp?Center=MemberLogin.jsp">로그인</button>
+				<button onclick="location.href='RentCarMain.jsp?Center=MemberLogin.jsp'">로그인</button>
+			<%
+				}else{ 
+			%>
+				<button onclick="location.href='MemberLogout.jsp'">로그아웃</button>
 			<%
 				}
 			%>
