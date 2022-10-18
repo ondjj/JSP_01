@@ -170,7 +170,15 @@
       	<Resource DriverClassName="oracle.jdbc.driver.OracleDriver" auth="Container" loginTimeout="10" maxWait="5000" name="jdbc/pool" password="1234" type="javax.sql.DataSource" url="jdbc:oracle:thin:@Localhost:1521:XE" username="ONDD"/>
       </Context>
      
-      <Context docBase="Jsp_Upload" path="/Jsp_Upload" reloadable="true" source="org.eclipse.jst.jee.server:Jsp_Upload"/><Context docBase="Model2-day1" path="/Model2-day1" reloadable="true" source="org.eclipse.jst.jee.server:Model2-day1"/></Host>
+      <Context docBase="Jsp_Upload" path="/Jsp_Upload" reloadable="true" source="org.eclipse.jst.jee.server:Jsp_Upload"/>
+      
+      <Context docBase="Model2-day1" path="/Model2-day1" reloadable="true" source="org.eclipse.jst.jee.server:Model2-day1"/>
+      
+      <Context docBase="MemberMVC" path="/MemberMVC" reloadable="true" source="org.eclipse.jst.jee.server:MemberMVC">
+        <Resource DriverClassName="oracle.jdbc.driver.OracleDriver" auth="Container" loginTimeout="10" maxWait="5000" name="jdbc/pool" password="1234" type="javax.sql.DataSource" url="jdbc:oracle:thin:@Localhost:1521:XE" username="ONDD"/>
+      </Context>
+      
+      </Host>
     </Engine>
   </Service>
 </Server>
