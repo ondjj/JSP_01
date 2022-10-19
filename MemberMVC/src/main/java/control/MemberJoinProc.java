@@ -12,9 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import model.MemberBean;
 import model.MemberDAO;
 
-/**
- * Servlet implementation class MemberJoinProc
- */
 @WebServlet("/proc.do")
 public class MemberJoinProc extends HttpServlet {
        

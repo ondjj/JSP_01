@@ -178,6 +178,10 @@
         <Resource DriverClassName="oracle.jdbc.driver.OracleDriver" auth="Container" loginTimeout="10" maxWait="5000" name="jdbc/pool" password="1234" type="javax.sql.DataSource" url="jdbc:oracle:thin:@Localhost:1521:XE" username="ONDD"/>
       </Context>
       
+      <Context docBase="Model2Board" path="/Model2Board" reloadable="true" source="org.eclipse.jst.jee.server:Model2Board">
+      	<Resource DriverClassName="oracle.jdbc.driver.OracleDriver" auth="Container" loginTimeout="10" maxWait="5000" name="jdbc/pool" password="1234" type="javax.sql.DataSource" url="jdbc:oracle:thin:@Localhost:1521:XE" username="ONDD"/>
+      </Context>
+      
       </Host>
     </Engine>
   </Service>

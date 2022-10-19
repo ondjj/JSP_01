@@ -21,6 +21,7 @@
 			<td width="150" align="center">직업</td>
 			<td width="100" align="center">나이</td>
 		</tr>
+		
 		<c:forEach var="bean" items="${arr}">
 		
 		<tr height="40">
