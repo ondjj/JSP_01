@@ -10,10 +10,24 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+<c:if test="${mgs == 1 }">
+	<script type="text/javascript">
+		alert("수정 오류 - 비밀번호가 틀렸습니다.");
+	</script>
+</c:if>
+
+<c:if test="${mgs == 2 }">
+	<script type="text/javascript">
+		alert("삭제 오류 - 비밀번호가 틀렸습니다.");
+	</script>
+</c:if>
+
+
 <div align="center">
 	<h2>전체 게시글</h2>
 	
-	<table style="width:700" border="1" bordercolor="skyblue">
+	<table style="width:700" border="1">
 		<tr height="40">
 			<td colspan="5" align="right">
 			<button onclick="location.href='BoardWriteForm.jsp'">글쓰기</button>
